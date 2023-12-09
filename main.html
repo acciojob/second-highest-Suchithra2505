@@ -10,18 +10,28 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			 arr.sort();
-			let n = arr.length;
-			let second_largest = 0;
-			for (let i = n - 2; i >= 0; i--) {
-    if (arr[i] != arr[n - 1]) {
-      second_largest = arr[i];
-      break;
+			if (arr.length <= 1) {
+    return -Infinity;
+  }
+
+  let max = -Infinity;
+  let secondMax = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      secondMax = max;
+      max = arr[i];
+    } else if (arr[i] > secondMax && arr[i] < max) {
+      secondMax = arr[i];
     }
   }
-	return second_largest;		
-		}
 
+  if (secondMax === -Infinity) {
+    return -Infinity;
+  }
+
+  return secondMax;
+		}
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
