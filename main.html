@@ -11,10 +11,11 @@
 		function secondHighest(arr) {
 			//Write your code here
 			 arr.sort();
+			let n = arr.length;
 			let second_largest = 0;
 			for (let i = n - 2; i >= 0; i--) {
-    if (a[i] != a[n - 1]) {
-      second_largest = a[i];
+    if (arr[i] != arr[n - 1]) {
+      second_largest = arr[i];
       break;
     }
   }
